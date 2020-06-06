@@ -1,0 +1,42 @@
+﻿<Window x:Class="ParawosoffApp.SaleInterface"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParawosoffApp"
+        mc:Ignorable="d"
+        Title="Интерфейс продавца-кассира" Height="720" Width="648" Loaded="Window_Loaded" Closing="Window_Closing" SizeChanged="Window_SizeChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="220"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="220"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Товары" Name="lblProduct" Grid.Column="0" Grid.Row="0" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <DataGrid Name="dgProduct" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" ColumnWidth="auto" AutoGenerateColumns="True" IsReadOnly="True"></DataGrid>
+        <GroupBox Header="Поиск" Name="gdPSearch" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" FontFamily="TimesNewRoman">
+            <TextBox Name="tbPSearch" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></TextBox>
+        </GroupBox>
+        <Button Name="btPSearch" Content="Найти" Grid.Column="3" Grid.Row="2" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtPSearch_Click"></Button>
+        <Label Content="Продажи" Name="lblSell" Grid.Column="0" Grid.Row="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <DataGrid Name="dgSell" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" ColumnWidth="auto" AutoGenerateColumns="True" IsReadOnly="True"></DataGrid>
+        <GroupBox Header="Поиск" Name="gdSSearch" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" FontFamily="TimesNewRoman">
+            <TextBox Name="tbSSearch" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></TextBox>
+        </GroupBox>
+        <Button Name="btSSearch" Content="Найти" Grid.Column="2" Grid.Row="5" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtSSearch_Click"></Button>
+        <Button Name="btAdd" Content="Добавить" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtAdd_Click"></Button>
+        <Button Name="btSelect" Content="Вывести в документ" IsEnabled="False" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtSelect_Click"></Button>
+        <Button Name="btOwnerSettings" Content="Личные данные" Grid.Column="3" Grid.Row="0" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtOwnerSettings_Click"></Button>
+        <TextBox Name="tbCheck" Text = "{Binding SelectedItem.Чек, ElementName=dgSell}" Visibility="Collapsed" TextChanged="TbCheck_TextChanged" ></TextBox>
+    </Grid>
+</Window>

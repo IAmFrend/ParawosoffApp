@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Storage\\Практика ПО ОН\\Приложение\\ParawosoffApp\\ParawosoffApp\\ParawosoffApp.csproj": {}
+  },
+  "projects": {
+    "D:\\Storage\\Практика ПО ОН\\Приложение\\ParawosoffApp\\ParawosoffApp\\ParawosoffApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Storage\\Практика ПО ОН\\Приложение\\ParawosoffApp\\ParawosoffApp\\ParawosoffApp.csproj",
+        "projectName": "ParawosoffApp",
+        "projectPath": "D:\\Storage\\Практика ПО ОН\\Приложение\\ParawosoffApp\\ParawosoffApp\\ParawosoffApp.csproj",
+        "packagesPath": "C:\\Users\\IAmFriend\\.nuget\\packages\\",
+        "outputPath": "D:\\Storage\\Практика ПО ОН\\Приложение\\ParawosoffApp\\ParawosoffApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\IAmFriend\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Legacy2CPSWorkaround": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

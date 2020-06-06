@@ -1,0 +1,59 @@
+﻿<Window x:Class="ParawosoffApp.MarketerInterface"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParawosoffApp"
+        mc:Ignorable="d"
+        Title="Интерфейс менеджера отдела продаж" Height="710" Width="648" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="121"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="121"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="29"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="29"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="29"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Схемы" Name="lblScheme" Grid.Column="0" Grid.Row="0" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <DataGrid Name="dgScheme" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" ColumnWidth="auto" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True" AutoGeneratingColumn="DgScheme_AutoGeneratingColumn"></DataGrid>
+        <GroupBox Header="Поиск" Name="gdSSearch" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBox Name="tbSSearch" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></TextBox>
+        </GroupBox>
+        <Button Name="btSSearch" Content="Найти" Grid.Column="3" Grid.Row="2" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtSSearch_Click"></Button>
+        <Label Content="Товары" Name="lblProduct" Grid.Column="0" Grid.Row="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <DataGrid Name="dgProduct" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" ColumnWidth="auto" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True" AutoGeneratingColumn="DgProduct_AutoGeneratingColumn"></DataGrid>
+        <GroupBox Header="Поиск" Name="gdPSearch" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
+            <TextBox Name="tbPSearch" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></TextBox>
+        </GroupBox>
+        <Button Name="btPSearch" Content="Найти" Grid.Column="3" Grid.Row="5" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtPSearch_Click"></Button>
+        <Button Name="btApply" IsEnabled="False" Content="Назначить схему" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtApply_Click"></Button>
+        <Label Content="Название" Name="lblName" Grid.Column="0" Grid.Row="7" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <TextBox Name="tbName" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Text = "{Binding SelectedItem.Название, ElementName=dgScheme}" TextChanged="Tb_TextChanged"></TextBox>
+        <Label Content="Основание" Name="lblBasis" Grid.Column="0" Grid.Row="9" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <TextBox Name="tbBasis" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Text = "{Binding SelectedItem.Основание, ElementName=dgScheme}" TextChanged="Tb_TextChanged"></TextBox>
+        <Label Content="Отображение" Name="lblReality" Grid.Column="0" Grid.Row="11" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black"></Label>
+        <TextBox Name="tbReality" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Text = "{Binding SelectedItem.Реализация, ElementName=dgScheme}" TextChanged="Tb_TextChanged"></TextBox>
+        <Button Name="btInsert" Content="Добавить" IsEnabled="False" Grid.Column="0" Grid.Row="13" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtInsert_Click"></Button>
+        <Button Name="btUpdate" Content="Изменить" IsEnabled="False" Grid.Column="1" Grid.Row="13" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtUpdate_Click"></Button>
+        <Button Name="btDelete" Content="Удалить" IsEnabled="False" Grid.Column="2" Grid.Row="13" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtDelete_Click"></Button>
+        <Button Name="btSelect" Content="Вывести отчёт" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="3" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtSelect_Click"></Button>
+        <Button Name="btOwnerSettings" Content="Личные данные" Grid.Column="3" Grid.Row="0" FontFamily="TimesNewRoman" FontSize="14" Foreground="Black" Click="BtOwnerSettings_Click"></Button>
+        <TextBox Name="tbSchemeID" Text = "{Binding SelectedItem.Номер, ElementName=dgScheme}" TextChanged="TbID_TextChanged" Visibility="Collapsed"></TextBox>
+        <TextBox Name="tbProductID" Text = "{Binding SelectedItem.Артикул, ElementName=dgProduct}" TextChanged="TbID_TextChanged" Visibility="Collapsed"></TextBox>
+    </Grid>
+</Window>
